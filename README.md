@@ -32,7 +32,7 @@ Set the URL of `opencv.js` to `src` attribute of `<script>` tag.
 <script async src="https://docs.opencv.org/3.4/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
 ```
 
-## Use OpenCV.js
+## Using OpenCV.js
 Once `opencv.js` is ready, you can access OpenCV objects and functions through `cv` object.
 
 For example, you can create a **[cv.Mat](https://docs.opencv.org/3.4/d3/d63/classcv_1_1Mat.html)** from an image by **[cv.imread](https://docs.opencv.org/3.4/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56)**.
@@ -43,6 +43,8 @@ imgElement.onload = function() {
 let mat = cv.imread(imgElement);
 }
 ```
+
+**Note**You have to call delete method of cv.Mat to free memory allocated in Emscripten's heap.
 
 ## Images
 OpenCV.js saves images as cv.Mat type. We use HTML canvas element to transfer cv.Mat to the web or in reverse
@@ -71,4 +73,4 @@ Because canvas only support 8-bit RGBA image with continuous storage, the **[cv
 
 
 # References
-https://docs.opencv.org
+https://docs.opencv.org/3.4/index.html
